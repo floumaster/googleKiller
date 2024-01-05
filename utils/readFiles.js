@@ -10,13 +10,9 @@ export const readFiles = () => {
     if (isComandLineWithFolderName) {
         const folderToRead = argsList[0]
         const fileNamesToRead = getFileNamesInFolder(folderToRead)
-        const filesContents = getFilesContents(fileNamesToRead, folderToRead)
-        console.log(filesContents)
-    } else if (isCommandLineWithFileNames) {
-        const filesContents = getFilesContents(argsList)
-        console.log(filesContents)
-    } else {
-        const filesContents = getDefaulFileNames()
-        console.log(filesContents)
-    }
+        return getFilesContents(fileNamesToRead, folderToRead)
+    } else if (isCommandLineWithFileNames)
+        return getFilesContents(argsList)
+    else
+        return getDefaulFileNames()
 }
