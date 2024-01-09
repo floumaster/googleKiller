@@ -1,1 +1,0 @@
-export const argsList = process.argv.slice(2)
